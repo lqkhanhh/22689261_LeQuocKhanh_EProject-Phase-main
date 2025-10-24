@@ -89,7 +89,7 @@ describe("Products API", function () {
     it("should get product by ID", async () => {
       const res = await chai
         .request(app.app)
-        .get(`/api/products/id/${productId}`)
+        .get(`/api/products/${productId}`)
         .set("Authorization", `Bearer ${authToken}`);
 
       expect(res).to.have.status(200);
