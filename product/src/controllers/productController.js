@@ -113,8 +113,8 @@ class ProductController {
     }
   }
 
-  async getProductById (res, req, next){
-    const product = await this.productsService.getProductById(req.params.productId);
+  async getProductById (req, res, next){
+    const product = await this.productsService.getProductById(req.params.id);
     if (!product) return res.status(404).json({message: "Product not found"});
     return res.status(200).json(product)
   }
