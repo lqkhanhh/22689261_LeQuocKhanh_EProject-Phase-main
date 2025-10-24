@@ -12,7 +12,6 @@ class ProductController {
     this.createOrder = this.createOrder.bind(this); 
     this.getOrderStatus = this.getOrderStatus.bind(this);
     this.ordersMap = new Map();
-    this.getProductById = this.getProductById.bind(this);
     this.productsService = new ProductsService();
 
   }
@@ -112,11 +111,7 @@ class ProductController {
       res.status(500).json({ message: "Server error" });
     }
   }
-  async getProductById(req, res, next) {
-    const product = await this.productsService.getProductById(req.params.id);
-    if (!product) return res.status(404).json({ message: "Product not found" });
-    return res.status(200).json(product);
-  }
+ 
 }
 
 module.exports = ProductController;
