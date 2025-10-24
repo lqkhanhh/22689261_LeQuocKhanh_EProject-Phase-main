@@ -60,5 +60,13 @@ git clone https://github.com/lqkhanhh/22689261_LeQuocKhanh_EProject-Phase-main.g
 ### 7 Kết quả chạy được trên docker
 ![results](public/results/dockerOrder.png)
 
+### 8. Github Action: Thực hiện CI/CD với dự án + CI/CD liên kết với Docker
 
+![results](public/results/resultgitubaction.png)
+
+![results](public/results/resulttestauth.png)
+
+![results](public/results/resulttestproduct.png)
+
+![results](public/results/resultlkdocker.png)
 
