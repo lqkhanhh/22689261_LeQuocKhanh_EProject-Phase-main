@@ -9,11 +9,12 @@ const ProductsService = require("../services/productsService");
 class ProductController {
 
   constructor() {
+    this.productsService = new ProductsService();
+    this.ordersMap = new Map();
     this.createOrder = this.createOrder.bind(this); 
     this.getOrderStatus = this.getOrderStatus.bind(this);
-    this.ordersMap = new Map();
-    this.productsService = new ProductsService();
     this.getProductById = this.getProductById.bind(this);
+   
 
   }
 
@@ -115,9 +116,11 @@ class ProductController {
 
   async getProductById (req, res, next){
     const product = await this.productsService.getProductById(req.params.id);
-    if (!product) return res.status(404).json({message: "Product not found"});
-    return res.status(200).json(product)
+    if (!product) return res.status(404).json({ message: "Not find product" });
+    return res.status(200).json(product);
   }
+
+
  
 }
 
