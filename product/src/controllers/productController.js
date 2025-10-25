@@ -14,8 +14,6 @@ class ProductController {
     this.createOrder = this.createOrder.bind(this); 
     this.getOrderStatus = this.getOrderStatus.bind(this);
     this.getProductById = this.getProductById.bind(this);
-   
-
   }
 
   async createProduct(req, res, next) {
@@ -115,11 +113,10 @@ class ProductController {
   }
 
   async getProductById (req, res, next){
-    const product = await this.productsService.getProductById(req.params.id);
-    if (!product) return res.status(404).json({ message: "Not find product" });
-    return res.status(200).json(product);
+    const p = await this.productsService.getProductById(req.params.id);
+    if (!p) return res.status(404).json({ message: "Not find product" });
+    return res.status(200).json(p);
   }
-
 
  
 }
